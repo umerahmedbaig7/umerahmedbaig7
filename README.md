@@ -200,10 +200,13 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 <table>
 <tr>
 <td width="50%"><img src="assets/images/stanford-3d-trajectory.jpg" width="100%" alt="3D trajectory of the Stanford arm end effector through four waypoints with top, side and front projections"></td>
-<td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Robot-Motion-Planning-and-Control/main/Lab_4/results/Position_Tracking_With_Payload.png" width="100%" alt="Six-joint desired versus actual position under computed-torque control with a payload"></td>
+<td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Robot-Motion-Planning-and-Control/main/Lab_4/results/Velocity_Tracking_With_Payload.png" width="100%" alt="Six-joint desired versus actual velocity under computed-torque control with a payload"></td>
+</tr>
+<tr>
+<td align="center"><sub>4-Waypoint - 3D end-effector Trajectory</sub></td>
+<td align="center"><sub>Joint velocity tracking with a payload known to the model</sub></td>
 </tr>
 </table>
-<sub>Left: 4-waypoint, 9 s end-effector trajectory (3D and projections). Right: joint tracking with a payload known to the model.</sub>
 
 ---
 
@@ -219,8 +222,11 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 <td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Simulation-of-Robotic-Systems/main/Lab_1/results/stability_analysis.png" width="100%" alt="Absolute position over time for forward Euler, backward Euler and Runge-Kutta on a damped oscillator"></td>
 <td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Simulation-of-Robotic-Systems/main/Lab_3/results/Actuated_MuJoCo_Model.jpg" width="100%" alt="Actuated closed-loop mechanism simulated in MuJoCo"></td>
 </tr>
+<tr>
+<td align="center"><sub>Integrator stability comparison</sub></td>
+<td align="center"><sub>Actuated MuJoCo mechanism.</sub></td>
+</tr>
 </table>
-<sub>Left: integrator stability comparison. Right: actuated MuJoCo mechanism.</sub>
 
 ---
 
@@ -237,8 +243,11 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 <td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Robot-Perception/main/Lab_4/results/Checkerboard_Corners.png" width="100%" alt="Detected checkerboard corners used for Zhang camera calibration"></td>
 <td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Robot-Perception/main/Lab_4/results/Disparity_Map.png" width="100%" alt="Stereo disparity map computed with StereoSGBM"></td>
 </tr>
+<tr>
+<td align="center"><sub>Checkerboard corners for camera calibration</sub></td>
+<td align="center"><sub>StereoSGBM disparity</sub></td>
+</tr>
 </table>
-<sub>Left: calibration corners. Right: StereoSGBM disparity.</sub>
 
 ---
 
@@ -255,8 +264,11 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 <td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Machine-Learning-in-Robotics/main/Lab_2/results/Prediction_Samples_Augmented.png" width="100%" alt="SegNet predictions on road signs with per-sample IoU"></td>
 <td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Machine-Learning-in-Robotics/main/Lab_3/results/tSNE_Clusters.png" width="100%" alt="t-SNE of autoencoder embeddings coloured by KMeans cluster"></td>
 </tr>
+<tr>
+<td align="center"><sub>Segmentation samples with IoU</sub></td>
+<td align="center"><sub>t-SNE of learned embeddings</sub></td>
+</tr>
 </table>
-<sub>Left: segmentation samples with IoU. Right: t-SNE of learned embeddings.</sub>
 
 ---
 
@@ -287,8 +299,11 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 <td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Potential-Field-Path-Planning/main/results/Path_Over_Field.png" width="100%" alt="Planned path over the total potential field among polygon obstacles"></td>
 <td width="50%"><img src="https://raw.githubusercontent.com/umerahmedbaig7/Potential-Field-Path-Planning/main/results/3D_Field_With_Path.png" width="100%" alt="3D potential surface with obstacles and the planned path"></td>
 </tr>
+<tr>
+<td align="center"><sub>Path over the potential field</sub></td>
+<td align="center"><sub>3D potential surface</sub></td>
+</tr>
 </table>
-<sub>Left: path over the potential field. Right: 3D potential surface.</sub>
 
 ---
 
@@ -318,11 +333,12 @@ A low-cost self-driving prototype on a remote-control car, built by a six-author
 <td width="34%"><img src="assets/images/lane-following-pipeline.jpg" width="100%" alt="Lane detection pipeline: distortion correction, perspective warp, Sobel filtering, histogram peak detection, sliding window search, curve filtering, overlay of the detected lane"></td>
 <td width="33%"><img src="https://umerahmedbaig7.github.io/images/Project/Self-Driving/Self-Driving_Car-1.png" width="100%" alt="Self-driving car prototype lane detection and object recognition output"></td>
 </tr>
+<tr>
+<td align="center"><sub>Lane-detection pipeline</sub></td>
+<td align="center"><sub>Prototype outputs (from my <a href="https://umerahmedbaig7.github.io/">portfolio</a>)</sub></td>
+</tr>
 </table>
-<sub>Left: lane-detection pipeline. Middle and right: prototype outputs (from my <a href="https://umerahmedbaig7.github.io/">portfolio</a>).</sub>
 
-<br>
-<br>
 <details>
 <summary><b>Also: Optimisation and Tabular ML</b></summary>
 
