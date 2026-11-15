@@ -3,6 +3,8 @@
 <img src="assets/banner.svg" width="120%" alt="Umer Ahmed Baig Mughal: Robotics and AI engineer. Animated banner of a robot following an A-star path among obstacles, with headline results: 96.6 percent navigation success, NeRF SSIM 0.658 to 0.778, crack mAP at 50 from 0.22 to 0.53, invoice audit F1 0.82.">
 
 <br>
+<br>
+
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-umerahmedbaig7.github.io-0B7285?style=for-the-badge&logo=googlechrome&logoColor=white)](https://umerahmedbaig7.github.io/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-umer--ahmed--baig7-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/umer-ahmed-baig7)
@@ -13,6 +15,8 @@
 **Robotics and AI Engineer**  ·  🌐 **[Full portfolio: umerahmedbaig7.github.io](https://umerahmedbaig7.github.io/)**
 
 </div>
+
+## Profile
 
 Robotics and AI engineer (MSc Robotics and AI, ITMO University, CGPA 4.82/5.0). I build and rigorously evaluate systems for robot navigation, reinforcement learning, robot perception, robot manipulation, 3D reconstruction and applied machine learning. Author of a peer-reviewed navigation paper (*Gyroscopy and Navigation*, 2026) and a NeRF depth-supervision manuscript; I also build tested Python systems (Django/FastAPI services, RAG with LangGraph, LightGBM pipelines). Previously spent 3+ years in LED-lighting photometry, R&D and quality-testing laboratories, leading the lab as Lab Manager for the last two.
 
