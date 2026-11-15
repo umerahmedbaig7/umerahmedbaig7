@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" width="100%" alt="Umer Ahmed Baig Mughal: Robotics and AI engineer. Animated banner of a robot following an A-star path among obstacles, with headline results: 96.6 percent navigation success, NeRF SSIM 0.658 to 0.778, crack mAP at 50 from 0.22 to 0.53, invoice audit F1 0.82.">
+<img src="assets/banner.svg" width="120%" alt="Umer Ahmed Baig Mughal: Robotics and AI engineer. Animated banner of a robot following an A-star path among obstacles, with headline results: 96.6 percent navigation success, NeRF SSIM 0.658 to 0.778, crack mAP at 50 from 0.22 to 0.53, invoice audit F1 0.82.">
 
 <br>
 
@@ -10,7 +10,7 @@
 [![ORCID](https://img.shields.io/badge/ORCID-0000--0002--2683--8886-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0000-0002-2683-8886)
 [![Email](https://img.shields.io/badge/Email-umerahmedbaig98%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:umerahmedbaig98@gmail.com)
 
-**Robotics and AI Engineer** · Hyderabad, Pakistan · 🌐 **[Full portfolio: umerahmedbaig7.github.io](https://umerahmedbaig7.github.io/)**
+**Robotics and AI Engineer**  ·  🌐 **[Full portfolio: umerahmedbaig7.github.io](https://umerahmedbaig7.github.io/)**
 
 </div>
 
@@ -40,7 +40,7 @@ More projects, photo galleries from the ROSATOM competitions and press are on my
 
 ## Featured work
 
-### 1 &nbsp;·&nbsp; TriLayer-Nav: A* + DWA + MPC navigation &nbsp;`Published`
+### 1 &nbsp;·&nbsp; TriLayer-Nav: A* + DWA + MPC Navigation &nbsp;`Published`
 
 A three-layer navigation stack for differential-drive robots: **A\*** plans a global path, the **Dynamic Window Approach** avoids obstacles in real time, **MPC** (4-step horizon, SLSQP) refines the commands under non-holonomic and actuator limits, and a **PID** loop drives the wheels. A\* paths are simplified with Ramer–Douglas–Peucker. Validated in MuJoCo physics simulation. First author, *Gyroscopy and Navigation*, 2026.
 
@@ -65,7 +65,7 @@ A three-layer navigation stack for differential-drive robots: **A\*** plans a gl
 
 ---
 
-### 2 &nbsp;·&nbsp; Depth-supervised NeRF &nbsp;`Under review`
+### 2 &nbsp;·&nbsp; Depth-Supervised NeRF &nbsp;`Manuscript Under Review`
 
 Which way of using depth improves NeRF training most when architecture, data and budget are identical? I compared four strategies on one 8x256 MLP: **RGB-only**, **soft** depth regression, **hard** depth-guided sampling with free-space and surface penalties, and a **hybrid** of both. First and corresponding author; submitted to *The Visual Computer* (under review).
 
@@ -74,15 +74,22 @@ Which way of using depth improves NeRF training most when architecture, data and
 <br><sub>Novel-view renders of the Lego scene from the four training strategies (repository experiments).</sub>
 </div>
 
+<br>
+
 <div align="center">
 <img src="https://raw.githubusercontent.com/umerahmedbaig7/Depth-Supervised-NeRF/main/Analysis/Frame_0_output.png" width="100%" alt="Ground truth and renderings for none, soft, hard and hybrid with absolute-error maps and per-frame PSNR and SSIM">
 <br><sub>Lego, validation frame 0: renderings and error maps x4 with per-frame PSNR / SSIM.</sub>
 </div>
 
+<br>
+
 <div align="center">
 <img src="assets/images/nerf-chair-comparison.jpg" width="100%" alt="Chair scene: ground truth and renderings for none, soft, hard and hybrid depth supervision with absolute-error maps">
 <br><sub>Chair scene: ground truth vs the four strategies, with error maps.</sub>
 </div>
+
+<br>
+
 
 | Lego, 100 held-out views | PSNR ↑ | SSIM ↑ | MSE ↓ (x10⁻³) | MAE ↓ (x10⁻²) |
 |---|:--:|:--:|:--:|:--:|
@@ -100,7 +107,7 @@ Which way of using depth improves NeRF training most when architecture, data and
 
 ---
 
-### 3 &nbsp;·&nbsp; MSc thesis: few-shot structural defect detection &nbsp;`Completed`
+### 3 &nbsp;·&nbsp; MSc Thesis: Few-Shot Learning Framework for Robust Structural Anomaly Detection &nbsp;`Completed`
 
 Detecting a **new defect class from a handful of labelled images**, motivated by robotic inspection of concrete and pavement. Evaluated offline on images; no robot deployment.
 
@@ -116,7 +123,7 @@ Detecting a **new defect class from a handful of labelled images**, motivated by
 
 ---
 
-### 4 &nbsp;·&nbsp; ProcuraAI: AI invoice auditor &nbsp;`Prototype · synthetic data`
+### 4 &nbsp;·&nbsp; ProcuraAI: AI Invoice Auditor &nbsp;`Completed - Synthetic Data`
 
 Three-way matching (purchase order ↔ delivery ↔ invoice) where **the LLM reads and explains but never decides**: money rules run in a deterministic Decimal engine, and every finding carries evidence and a confidence label.
 
@@ -139,13 +146,13 @@ Three-way matching (purchase order ↔ delivery ↔ invoice) where **the LLM rea
 
 - **Stack:** FastAPI + Streamlit, 4-agent **LangGraph** workflow, **FAISS + BM25** hybrid retrieval, Tesseract OCR with PyMuPDF, Pydantic, SQLAlchemy, Docker, GitHub Actions, about 5,700 lines of source and about 50 offline tests.
 - **Results (72 synthetic invoices, 25 anomaly scenarios):** all 42 anomalous invoices flagged; on OCR'd documents precision **0.70**, recall **0.98**, F1 **0.82**; RAG Recall@3 = **1.00** over 70 queries.
-- **Limits:** synthetic, template-based documents; not validated on real invoices; exposure totals from OCR are unreliable.
+- **Limits:** synthetic, template-based documents; not validated on real invoices.
 
 [![Code](https://img.shields.io/badge/Code-GitHub-181717?style=flat-square&logo=github)](https://github.com/umerahmedbaig7/procuraai-invoice-auditor)
 
 ---
 
-### 5 &nbsp;·&nbsp; Hybrid ARIMAX–LSTM PM2.5 forecasting for robot-assisted monitoring &nbsp;`Co-author · under review`
+### 5 &nbsp;·&nbsp; Hybrid ARIMAX–LSTM PM2.5 Forecasting for Robot-Assisted Monitoring &nbsp;`Co-author · Manuscript Under Review`
 
 <div align="center">
 <img src="assets/pipeline-pm25.svg" width="100%" alt="Pipeline: data from 12 Beijing stations, preprocessing, ARIMAX, LSTM on residuals, monitoring policy">
@@ -164,6 +171,8 @@ A Django REST Framework service that plans a USA road trip and chooses the **che
 <br><sub>A real run: New York → Columbia, SC · 710.1 mi · 2 stops · $238.58 total fuel cost · $3.86 saved vs filling at the farthest station.</sub>
 </div>
 
+<br>
+
 - **Engine:** dynamic programming over (station, fuel level) keeps every leg ≤ 500 miles including detours; one routing call per trip with caching and throttling.
 - **Data:** 8,151 price rows cleaned to 6,626 US stations, placed offline by ZIP centroid (no per-row geocoding).
 - **Quality:** 97 automated tests and CI.
@@ -172,11 +181,11 @@ A Django REST Framework service that plans a USA road trip and chooses the **che
 
 ---
 
-## MSc coursework and BEng thesis
+## MSc Coursework and BEng Thesis
 
 Hands-on implementations from my ITMO robotics courses and my undergraduate thesis. Each links to its repository.
 
-### 7 &nbsp;·&nbsp; Stanford Arm: dynamics, trajectory planning and computed-torque control &nbsp;`Coursework`
+### 7 &nbsp;·&nbsp; Stanford Arm: Dynamics, Trajectory Planning and Computed-Torque Control &nbsp;`Coursework`
 
 `Robotics` `Control Systems` `Python` `Trajectory Planning` `Simulation` &nbsp;·&nbsp; [Robot-Motion-Planning-and-Control](https://github.com/umerahmedbaig7/Robot-Motion-Planning-and-Control) &nbsp;·&nbsp; <sub>Feb 2025 – Jun 2025</sub>
 
@@ -194,7 +203,7 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 
 ---
 
-### 8 &nbsp;·&nbsp; Simulation of robotic systems: numerical integration and MuJoCo &nbsp;`Coursework`
+### 8 &nbsp;·&nbsp; Simulation of Robotic Systems: Numerical Integration and MuJoCo &nbsp;`Coursework`
 
 `Simulation` `MuJoCo` `Python` `Control Systems` `Numerical Methods` &nbsp;·&nbsp; [Simulation-of-Robotic-Systems](https://github.com/umerahmedbaig7/Simulation-of-Robotic-Systems) &nbsp;·&nbsp; <sub>Sep 2024 – Jan 2025</sub>
 
@@ -211,7 +220,7 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 
 ---
 
-### 9 &nbsp;·&nbsp; Robot perception: Kalman filters, calibration and stereo depth &nbsp;`Coursework`
+### 9 &nbsp;·&nbsp; Robot Perception: Kalman Filters, Camera Calibration and Stereo Depth &nbsp;`Coursework`
 
 `OpenCV` `Computer Vision` `Kalman Filtering` `Python` `NumPy` &nbsp;·&nbsp; [Robot-Perception](https://github.com/umerahmedbaig7/Robot-Perception) &nbsp;·&nbsp; <sub>Feb 2025 – Jun 2025</sub>
 
@@ -229,7 +238,7 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 
 ---
 
-### 10 &nbsp;·&nbsp; Machine learning in robotics: classification, segmentation, autoencoders &nbsp;`Coursework`
+### 10 &nbsp;·&nbsp; Machine Learning in Robotics: Classification, Segmentation, Autoencoders &nbsp;`Coursework`
 
 `PyTorch` `Computer Vision` `Deep Learning` `Machine Learning` `Python` &nbsp;·&nbsp; [Machine-Learning-in-Robotics](https://github.com/umerahmedbaig7/Machine-Learning-in-Robotics) &nbsp;·&nbsp; <sub>Feb 2025 – Jun 2025</sub>
 
@@ -247,7 +256,7 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 
 ---
 
-### 11 &nbsp;·&nbsp; 6-DOF manipulator kinematics from first principles &nbsp;`Coursework`
+### 11 &nbsp;·&nbsp; 6-DOF Manipulator Kinematics &nbsp;`Coursework`
 
 `Robotics` `Python` `SymPy` `NumPy` `Kinematics` &nbsp;·&nbsp; [Robot-Modeling-and-Identification](https://github.com/umerahmedbaig7/Robot-Modeling-and-Identification) &nbsp;·&nbsp; <sub>Sep 2024 – Jan 2025</sub>
 
@@ -262,7 +271,7 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 
 ---
 
-### 12 &nbsp;·&nbsp; Artificial potential field path planner &nbsp;`Coursework`
+### 12 &nbsp;·&nbsp; Artificial Potential Field Path Planner &nbsp;`Coursework`
 
 `Path Planning` `Python` `NumPy` `OpenCV` `Robotics` &nbsp;·&nbsp; [Potential-Field-Path-Planning](https://github.com/umerahmedbaig7/Potential-Field-Path-Planning) &nbsp;·&nbsp; <sub>Feb 2025 – Jun 2025</sub>
 
@@ -279,7 +288,7 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 
 ---
 
-### 13 &nbsp;·&nbsp; Deep RL and physics-informed learning &nbsp;`Coursework`
+### 13 &nbsp;·&nbsp; Deep RL and Physics-Informed Learning &nbsp;`Coursework`
 
 `Reinforcement Learning` `PyTorch` `Deep Learning` `Python` `Robotics` &nbsp;·&nbsp; [Robotics-and-Reinforcement-Learning](https://github.com/umerahmedbaig7/Robotics-and-Reinforcement-Learning) &nbsp;·&nbsp; <sub>09/2025 – 01/2026</sub>
 
@@ -289,7 +298,7 @@ Hands-on implementations from my ITMO robotics courses and my undergraduate thes
 
 ---
 
-### 14 &nbsp;·&nbsp; Self-driving car prototype with LiDAR and image processing &nbsp;`BEng thesis · published`
+### 14 &nbsp;·&nbsp; Self-Driving Car with LiDAR and Image Processing &nbsp;`BEng Thesis · Published`
 
 `OpenCV` `TensorFlow` `Arduino` `Computer Vision` `Deep Learning` &nbsp;·&nbsp; <sub>10/2018 – 10/2019 · published Dec 2020 · <a href="https://doi.org/10.33832/ijgdc.2020.13.2.06">IJGDC 13(2), 77–88</a></sub>
 
@@ -304,13 +313,14 @@ A low-cost self-driving prototype on a remote-control car, built by a six-author
 <tr>
 <td width="34%"><img src="assets/images/lane-following-pipeline.jpg" width="100%" alt="Lane detection pipeline: distortion correction, perspective warp, Sobel filtering, histogram peak detection, sliding window search, curve filtering, overlay of the detected lane"></td>
 <td width="33%"><img src="https://umerahmedbaig7.github.io/images/Project/Self-Driving/Self-Driving_Car-1.png" width="100%" alt="Self-driving car prototype lane detection and object recognition output"></td>
-<td width="33%"><img src="https://umerahmedbaig7.github.io/images/Project/Self-Driving/Self-Driving_Car-2.png" width="100%" alt="Self-driving car prototype traffic sign and traffic light detection output"></td>
 </tr>
 </table>
 <sub>Left: lane-detection pipeline. Middle and right: prototype outputs (from my <a href="https://umerahmedbaig7.github.io/">portfolio</a>).</sub>
 
+<br>
+<br>
 <details>
-<summary><b>Also: optimisation and tabular ML</b></summary>
+<summary><b>Also: Optimisation and Tabular ML</b></summary>
 
 <br>
 
@@ -382,7 +392,6 @@ The map below shows which of these skills are demonstrated by my public reposito
 | 💻 **GitHub** | [github.com/umerahmedbaig7](https://github.com/umerahmedbaig7) |
 | 🎓 **ORCID** | [0000-0002-2683-8886](https://orcid.org/0000-0002-2683-8886) |
 | ✉️ **Email** | [umerahmedbaig98@gmail.com](mailto:umerahmedbaig98@gmail.com) |
-| 📍 **Location** | Hyderabad, Pakistan |
 
 <div align="center">
 
@@ -393,5 +402,19 @@ The map below shows which of these skills are demonstrated by my public reposito
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:umerahmedbaig98@gmail.com)
 
 <sub>Robots that perceive, plan and act, with the evidence to back it up.</sub>
+
+</div>
+
+## 👤 Author
+
+<div align="center">
+
+### Umer Ahmed Baig Mughal
+
+🎓 **MSc Robotics and Artificial Intelligence** — ITMO University <br>
+🏛️ *Faculty of Control Systems and Robotics* <br>
+🔬 *Specialization: Machine Learning · Computer Vision · Human-Robot Interaction · Autonomous Systems · Robotic Motion Control*
+
+[![GitHub](https://img.shields.io/badge/GitHub-umerahmedbaig7-181717?style=for-the-badge&logo=github)](https://github.com/umerahmedbaig7)
 
 </div>
