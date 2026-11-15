@@ -77,12 +77,11 @@ def banner():
         s.append(f'<line x1="0" y1="{gy}" x2="{W}" y2="{gy}" stroke="{GRID}" stroke-width="1" opacity=".45"/>')
 
     # ---- left text block
-    s.append(text(52, 78, "ROBOTICS · AI · AUTONOMOUS SYSTEMS", 13, TEAL, "bold", font=MONO, extra='letter-spacing="3"'))
-    s.append(text(52, 140, "Umer Ahmed", 56, TEXT, "800"))
-    s.append(text(52, 198, "Baig Mughal", 56, TEXT, "800"))
-    s.append(f'<rect x="52" y="214" width="120" height="4" rx="2" fill="url(#bar)">'
-             f'<animate attributeName="width" values="0;120;120;0" keyTimes="0;.1;.9;1" dur="8s" repeatCount="indefinite"/></rect>')
-    s.append(text(52, 250, "MSc Robotics & AI · ITMO University · CGPA 4.82/5 · Diploma with Honours", 14, MUTED, font=MONO))
+    s.append(text(52, 88, "ROBOTICS · AI · AUTONOMOUS SYSTEMS", 13, TEAL, "bold", font=MONO, extra='letter-spacing="3"'))
+    s.append(text(52, 162, "Umer Ahmed Baig Mughal", 52, TEXT, "800", extra='textLength="660" lengthAdjust="spacingAndGlyphs"'))
+    s.append(f'<rect x="52" y="184" width="150" height="4" rx="2" fill="url(#bar)">'
+             f'<animate attributeName="width" values="0;150;150;0" keyTimes="0;.1;.9;1" dur="8s" repeatCount="indefinite"/></rect>')
+    s.append(text(52, 226, "MSc Robotics & AI · ITMO University · CGPA 4.82/5 · Diploma with Honours", 14, MUTED, font=MONO))
 
     lines = ["perception → planning → control",
              "few-shot defect detection for robotic inspection",
@@ -94,14 +93,14 @@ def banner():
     for i, ln in enumerate(lines):
         if STATIC:
             if i == 0:
-                s.append(f'<text x="52" y="292" font-family="{MONO}" font-size="21" fill="{TEAL}">&gt; {esc(ln)}</text>')
+                s.append(f'<text x="52" y="282" font-family="{MONO}" font-size="21" fill="{TEAL}">&gt; {esc(ln)}</text>')
             continue
         a, b = i / n, (i + 1) / n
         kt = f"0;{a:.3f};{a + .02:.3f};{b - .03:.3f};{b - .01:.3f};1"
-        s.append(f'<text x="52" y="292" font-family="{MONO}" font-size="21" fill="{TEAL}" opacity="0">'
+        s.append(f'<text x="52" y="282" font-family="{MONO}" font-size="21" fill="{TEAL}" opacity="0">'
                  f'&gt; {esc(ln)}<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="{kt}" '
                  f'dur="{cyc}s" repeatCount="indefinite"/></text>')
-    s.append(f'<rect x="52" y="304" width="9" height="3" fill="{TEAL}"><animate attributeName="opacity" '
+    s.append(f'<rect x="52" y="294" width="9" height="3" fill="{TEAL}"><animate attributeName="opacity" '
              f'values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>')
 
     # ---- metric chips
@@ -417,6 +416,80 @@ def matrix():
     return "".join(s)
 
 
+
+# =================================================================== SKILLS STACK
+ICONS = [("Python-Dark", "Python"), ("PyTorch-Dark", "PyTorch"), ("TensorFlow-Dark", "TensorFlow"), ("OpenCV-Dark", "OpenCV"),
+         ("ScikitLearn-Dark", "scikit-learn"), ("FastAPI", "FastAPI"), ("Django", "Django"), ("Docker", "Docker"),
+         ("Git", "Git"), ("Github-Dark", "GitHub"), ("GithubActions-Dark", "Actions"), ("SQLite", "SQLite"),
+         ("LaTeX-Dark", "LaTeX"), ("Arduino", "Arduino")]
+CHIP_GROUPS = [
+    ("SCIENTIFIC COMPUTING", BLUE, ["C / C++", "MATLAB", "NumPy", "SciPy", "Matplotlib", "pandas", "SymPy", "scikit-image"], False),
+    ("DEEP LEARNING & VISION", TEAL, ["YOLOv8", "CNN / SegNet", "Autoencoders", "NeRF", "Keras", "Mask R-CNN", "Stereo vision (StereoSGBM)", "Roboflow"], False),
+    ("TIME SERIES & FORECASTING", GREEN, ["LSTM", "ARIMAX", "Time-series forecasting", "LightGBM", "Rolling-origin validation"], False),
+    ("ROBOT LEARNING & CONTROL", AMBER, ["Gymnasium", "Stable-Baselines3", "DQN", "PPO + GAE", "PINNs", "MPC", "PID", "Computed-torque"], False),
+    ("PLANNING & ESTIMATION", CORAL, ["A*", "DWA", "Potential fields", "EKF / UKF", "Least squares", "DH kinematics / IK", "Camera calibration"], False),
+    ("ROBOTICS & SIMULATION", GREEN, ["ROS / ROS2", "Gazebo", "Webots", "Rviz", "MuJoCo", "Robotics Toolbox for Python", "RK4 / RK45 integrators"], False),
+    ("LLM, RAG & AGENTS", VIOLET, ["LLM (Gemini API)", "LangChain", "LangGraph", "Multi-agent systems", "Tool-using agents", "RAG", "FAISS", "BM25", "Structured extraction (Pydantic)",
+                                   "Tesseract OCR", "PyMuPDF", "rapidfuzz"], False),
+    ("BACKEND & DELIVERY", BLUE, ["Django REST Framework", "Streamlit", "SQLAlchemy", "pytest", "CI / CD"], False),
+    ("LAB, HARDWARE & EMBEDDED", AMBER, ["Photometry", "DIALux", "Spectroradiometry", "Instrument calibration", "SMT / PCB assembly", "STM32", "LabVIEW", "Node-RED", "MQTT",
+                                         "Multisim", "Proteus", "AutoCAD", "Cisco Packet Tracer"], False),
+]
+
+
+def _w(s, size=12.5):
+    try:
+        from PIL import ImageFont
+        f = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", int(size * 4))
+        return f.getlength(s) / 4 * 0.93
+    except Exception:
+        return len(s) * size * 0.58
+
+
+def skills_stack():
+    import base64
+    W, left, right = 1240, 330, 1210
+    tile, n = 64, len(ICONS)
+    step = (W - 60) / n
+    # layout chips first to know the height
+    y = 196
+    rows = []
+    for gname, col, chips, dashed in CHIP_GROUPS:
+        x, line, lines = left, [], []
+        for c in chips:
+            cw = _w(c) + 26
+            if x + cw > right:
+                lines.append(line); line, x = [], left
+            line.append((x, cw, c)); x += cw + 10
+        lines.append(line)
+        rows.append((gname, col, y, lines, dashed))
+        y += 40 * len(lines) + 14
+    H = y + 18
+    s = [head(W, H, "Toolchain: tools, libraries and methods used across my repositories",
+              "Logos for the core stack and chips for libraries, methods and domains used in the author's repositories.")]
+    s.append(f'<rect width="{W}" height="{H}" rx="16" fill="{BG0}"/>')
+    s.append(text(28, 36, "TOOLCHAIN", 14, TEAL, "bold", font=MONO, extra='letter-spacing="2"'))
+    s.append(text(28, 58, "Logos = core stack · chips = libraries, methods, tools and domains I work with", 12.5, MUTED, font=MONO))
+    for i, (fname, label) in enumerate(ICONS):
+        data = base64.b64encode(open(os.path.join(OUT, "icons", fname + ".svg"), "rb").read()).decode()
+        cx = 30 + i * step + (step - tile) / 2
+        anim = "" if STATIC else (f'<animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="3.2s" '
+                                   f'begin="{i * 0.18:.2f}s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>')
+        s.append(f'<g>{anim}<image x="{cx:.1f}" y="82" width="{tile}" height="{tile}" href="data:image/svg+xml;base64,{data}"/>'
+                 f'{text(cx + tile / 2, 82 + tile + 20, label, 11.5, MUTED, anchor="middle")}</g>')
+    s.append(f'<line x1="28" y1="178" x2="{W - 28}" y2="178" stroke="#1e4263"/>')
+    for gname, col, gy, lines, dashed in rows:
+        s.append(f'<rect x="28" y="{gy}" width="4" height="{40 * len(lines) - 12}" rx="2" fill="{col}"/>')
+        s.append(text(44, gy + 19, gname, 11.5, col, "bold", font=MONO, extra='letter-spacing="1.2"'))
+        for li, line in enumerate(lines):
+            for (cx, cw, c) in line:
+                cy = gy + li * 40
+                s.append(f'<rect x="{cx:.1f}" y="{cy}" width="{cw:.1f}" height="28" rx="14" fill="{PANEL}" stroke="{col}" stroke-opacity=".7"{(" stroke-dasharray=\'4 3\'" if dashed else "")}/>'
+                         f'{text(cx + cw / 2, cy + 18.5, c, 12.5, TEXT, "normal", "middle")}')
+    s.append("</svg>")
+    return "".join(s)
+
+
 def write(name, content):
     with open(os.path.join(OUT, name), "w", encoding="utf8") as f:
         f.write(content)
@@ -427,6 +500,7 @@ if __name__ == "__main__":
     write("banner.svg", banner())
     write("results-console.svg", console())
     write("skill-evidence-map.svg", matrix())
+    write("skills-stack.svg", skills_stack())
     pipeline("pipeline-thesis.svg", "MSC THESIS · FEW-SHOT STRUCTURAL DEFECT DETECTION",
              [("Base detector", "YOLOv8n · 4 classes", "1,120 images · 0.79 mAP@50"),
               ("Few-shot adaptation", "novel class: crack", "K = 5, 7, 10, 20, 30"),
